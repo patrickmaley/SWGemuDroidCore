@@ -114,6 +114,7 @@
 #include "server/zone/objects/creature/commands/CounterAttackCommand.h"
 #include "server/zone/objects/creature/commands/CoupDeGraceCommand.h"
 #include "server/zone/objects/creature/commands/CraftCommand.h"
+#include "server/zone/objects/creature/commands/CreateBotCommand.h"
 #include "server/zone/objects/creature/commands/CreateCreatureCommand.h"
 #include "server/zone/objects/creature/commands/CreateManfSchematicCommand.h"
 #include "server/zone/objects/creature/commands/CreateMissionElementCommand.h"
@@ -515,6 +516,7 @@ void CommandConfigManager::registerCommands2() {
 	commandFactory.registerCommand<CounterAttackCommand>(String("counterAttack").toLowerCase());
 	commandFactory.registerCommand<CoupDeGraceCommand>(String("coupDeGrace").toLowerCase());
 	commandFactory.registerCommand<CraftCommand>(String("craft").toLowerCase());
+	commandFactory.registerCommand<CreateBotCommand>(String("createbot").toLowerCase());
 	commandFactory.registerCommand<CreateCreatureCommand>(String("createCreature").toLowerCase());
 	commandFactory.registerCommand<CreateManfSchematicCommand>(String("createManfSchematic").toLowerCase());
 	commandFactory.registerCommand<CreateMissionElementCommand>(String("createMissionElement").toLowerCase());
