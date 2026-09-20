@@ -2,7 +2,6 @@
 #define PLAYERBOTSESSION_H_
 
 #include "server/zone/ZoneClientSession.h"
-#include "server/zone/ZoneProcessServer.h"
 
 namespace server {
 namespace zone {
@@ -11,13 +10,11 @@ namespace playerbots {
 
 class PlayerbotSession : public ZoneClientSession {
 public:
-    PlayerbotSession(ZoneProcessServer* serv);
+    PlayerbotSession();
     virtual ~PlayerbotSession();
 
-    // Override to prevent real network activity
-    virtual void disconnect(bool lockPlayer = true) override;
-    virtual void sendMessage(BaseMessage* msg) override;
-    virtual void sendMessage(StandaloneBaseMessage* msg) override;
+    void disconnect(bool lockPlayer = true);
+    void sendMessage(BasePacket* msg);
 
     bool isPlayerBot() const {
         return true;

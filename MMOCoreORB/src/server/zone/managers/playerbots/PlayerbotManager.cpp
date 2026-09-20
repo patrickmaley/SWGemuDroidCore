@@ -22,10 +22,8 @@ ManagedReference<CreatureObject*> PlayerbotManager::createBot(const String& name
         return nullptr;
     }
 
-    // 1. Create a fake session
-    ZoneProcessServer* processServer = zoneServer->getZoneProcessServer();
-    PlayerbotSession* botSession = new PlayerbotSession(processServer);
-
+   // New:
+PlayerbotSession* botSession = new PlayerbotSession();
     // 2. Create the CreatureObject (player)
     ManagedReference<CreatureObject*> bot = zoneServer->createObject(templateName.hashCode(), 2).castTo<CreatureObject*>();
 

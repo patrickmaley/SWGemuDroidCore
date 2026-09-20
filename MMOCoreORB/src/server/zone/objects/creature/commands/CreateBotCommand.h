@@ -31,7 +31,7 @@ public:
 
         String botName = args.getStringToken();
 
-        ManagedReference<CreatureObject*> bot = PlayerbotManager::instance()->createBot(botName);
+        ManagedReference<CreatureObject*> bot = server::zone::managers::playerbots::PlayerbotManager::instance()->createBot(botName);
 
         if (bot != nullptr) {
             creature->sendSystemMessage("Bot \\#00FF00" + botName + "\\#FFFFFF created successfully.");

@@ -10,7 +10,7 @@ namespace zone {
 namespace managers {
 namespace playerbots {
 
-class PlayerbotManager : public Singleton<PlayerbotManager>, public Logger {
+class PlayerbotManager : public Singleton<PlayerbotManager>, public Logger, public Object {
 public:
     PlayerbotManager();
     ~PlayerbotManager();
